@@ -1,9 +1,9 @@
+import java.util.stream.*;
 class Solution {
     public String solution(String cipher, int code) {
-        String answer = "";
-        for(int i=code-1; i < cipher.length(); i+=code){
-                answer += cipher.charAt(i);
-        }
-        return answer;
+        return IntStream.range(0, cipher.length())
+                .filter(value -> (value+1) % code == 0)
+                .mapToObj(c -> String.valueOf(cipher.charAt(c)))
+                .collect(Collectors.joining());
     }
 }
