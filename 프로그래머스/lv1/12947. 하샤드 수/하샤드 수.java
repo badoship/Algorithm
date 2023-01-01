@@ -1,6 +1,6 @@
 class Solution {
     public boolean solution(int x) {
-        return x % getPositionSum(x) == 0 ? true : false;
+        return x % getPositionSum(x) == 0;
     }
     
     public static int getPositionSum(int x){
