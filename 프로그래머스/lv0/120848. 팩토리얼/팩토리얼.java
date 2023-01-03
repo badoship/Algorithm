@@ -1,10 +1,11 @@
 class Solution {
     public int solution(int n) {
         int answer = 1;
-        for(int i=1; i<12;i++){
-            answer *= i;
-            if( answer > n ) return i-1;
+        int idx = 1;
+        while(true){
+            answer *= idx;
+            if( answer > n ) return idx-1;
+            idx++;
         }
-        return 0;
     }
 }
