@@ -1,5 +1,9 @@
 class Solution {
     public String[] solution(String my_str, int n) {
+        return stringToNParTs(my_str,n);
+    }
+    
+    public String[] stringToNParTs(String my_str, int n){
         int len = my_str.length();
         String[] answer = new String[(len-1)/n+1];
         String temp = "";
@@ -13,4 +17,5 @@ class Solution {
         }
         return answer;
     }
+
 }
