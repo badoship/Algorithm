@@ -19,7 +19,7 @@ public class Main{
             if ( a == b && b == c ){
                 tempPrice = 10000 + a * 1000;
             }
-            else if( a == b ){
+            else if( a == b || a == c ){
                 tempPrice = 1000 + a * 100;
             }
             else if( a == c ){
