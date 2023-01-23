@@ -6,20 +6,15 @@ public class Main{
         Scanner sc = new Scanner(System.in);
         String bowls = sc.nextLine();
         sc.close();
-        String[] bowlsArr = bowls.split("");
         int height = 10;
-        String bowl = bowlsArr[0];
-        
-        for(int i = 1; i < bowlsArr.length; i++){
-            if ( bowlsArr[i].equals(bowl) ){
+        for(int i = 1; i < bowls.length(); i++){
+            if( bowls.charAt(i) == bowls.charAt(i-1) ){
                 height += 5;
             }
             else {
                 height += 10;
             }
-            bowl = bowlsArr[i];
         }
-        
         System.out.println(height);
     }
 }
