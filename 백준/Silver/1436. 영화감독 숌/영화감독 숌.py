@@ -1,21 +1,10 @@
 n = int(input())
-nums = list()
-i = 666
-while len(nums) < n:
-    cnt = 0
-    temp = i
-    while temp > 0 :
-        if temp % 10 == 6 :
-            cnt += 1
-        else :
-            cnt = 0
-
-        if cnt == 3 :
-            nums.append(i)
-            break
-
-        temp //= 10
-
-    i += 1
-
-print(nums[n-1])
+cnt = 0
+six_n = 666
+while True:
+    if '666' in str(six_n):
+        cnt += 1
+    if cnt == n:
+        print(six_n)
+        break
+    six_n += 1
