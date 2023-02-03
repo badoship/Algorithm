@@ -1,6 +1,5 @@
 import sys
-from collections import deque
-deq = deque()
+deq = list()
 for i in range(int(input())):
     command = sys.stdin.readline().split()
     c = command[0]
@@ -9,7 +8,7 @@ for i in range(int(input())):
         deq.append(command[1])
 
     if c == 'pop':
-        print(-1 if not deq else deq.popleft())
+        print(-1 if not deq else deq.pop(0))
 
     if c == 'size':
         print(len(deq))
