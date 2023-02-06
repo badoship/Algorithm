@@ -1,12 +1,7 @@
 import sys
 
-k = int(input())
-nums = list()
-for i in range(k) :
-    num = list(map(int,sys.stdin.readline().strip().split()))
-    nums.append(num)
-
-nums.sort(key = lambda x : (x[1],x[0]))
-
-for x , y in nums :
-    print(x , y)
+n = int(input())
+xAndY = list(list(map(int,sys.stdin.readline().rstrip().split())) for _ in range(n))
+xAndY.sort(key=lambda x:(x[1],x[0]))
+for x, y in xAndY:
+    print(x,y)
