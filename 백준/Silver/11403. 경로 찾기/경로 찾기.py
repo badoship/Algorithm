@@ -1,22 +1,17 @@
 import sys
-from collections import deque
 
 n = int(input())
 graph = [list(map(int,sys.stdin.readline().rstrip().split())) for _ in range(n)]
 
+def dfs(x):
+    for i in range(n):
+        if graph[x][i] and visited[i] == 0:
+            visited[i] = 1
+            dfs(i)
+
 for i in range(n) :
-    queue = deque()
-    queue.append(i)
-    visited = [0] * n
-
-    while queue :
-        q = queue.popleft()
-
-        for j in range(n):
-            if visited[j] == 0 and graph[q][j] == 1:
-                queue.append(j)
-                graph[i][j] = 1
-                visited[j] = 1
-
-for grp in graph :
-    print(*grp)
+    visited = [0 for _ in range(n)]
+    dfs(i)
+    for j in range(n):
+        print(visited[j] , end=" ")
+    print()
